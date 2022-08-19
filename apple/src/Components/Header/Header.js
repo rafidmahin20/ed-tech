@@ -9,7 +9,7 @@ const Header = () => {
         <div className="container px-6 py-3 mx-auto md:flex">
             <div className="flex items-center justify-between">
                 <div>
-                    <a className="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">Apple</a>
+                    <p className="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">Apple</p>
                 </div>
                 
                
