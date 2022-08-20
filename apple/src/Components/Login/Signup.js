@@ -1,18 +1,21 @@
 import React from 'react';
 import auth from "../Firebase.init";
-import { useCreateUserWithEmailAndPassword,  useSignInWithGoogle } from 'react-firebase-hooks/auth';
+
 import { useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
+import Loading from '../Loading';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 
 const Signup = () => {
+    
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
+        sloading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
-      const [signInWithGoogle, guser, loading, gerror] = useSignInWithGoogle(auth);
+      const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
       const navigate = useNavigate();
       const {
         register,
@@ -26,15 +29,24 @@ const Signup = () => {
 
       let signInError;
 
+      if (sloading || gloading) {
+        return <Loading></Loading>;
+      }
+
       if (error || gerror) {
         signInError = (
           <p className="text-red-500">
             <small>
-              {error?.message || gerror?.message || updateError?.message}
+              {error?.message || gerror?.message}
             </small>
           </p>
         );
       }
+
+      const onSubmit = async (data) => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        
+      };
     return (
         <div>
             <div className="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md  mt-20 mb-20">

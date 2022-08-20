@@ -1,9 +1,8 @@
 import React from 'react';
 import useService from '../Hooks/useService';
 
-const Service = ({s}) => {
-    const { _id, name, picture, details, price } = s ;
-    console.log(s)
+const Service = ({serviceWork}) => {
+    const { _id, name, picture, details, price } = serviceWork ;
     
     const [isLoading] = useService()
     return (

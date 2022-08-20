@@ -5,7 +5,6 @@ import Service from './Service';
 
 const Services = () => {
     const [service,setService,isLoading] = useService();
-    console.log(service)
     return (
         <>
         {
@@ -18,7 +17,7 @@ const Services = () => {
                 <div className="lg:mx-auto xl:mx-auto 2xl:mx-auto md:mx-auto mt-11">
                     <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 mb-20 md:gap-3 sm:gap-y-3 lg:px-10'>
                      {
-                         service.slice(0, 3).map(s => <Service key={s._id} service={s}/>)
+                         service.slice(0, 3).map(serviceWork => <Service key={serviceWork._id} serviceWork={serviceWork}/>)
                      }
                     </div>
                 </div>
