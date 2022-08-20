@@ -1,8 +1,10 @@
 import React from 'react';
 import useService from '../Hooks/useService';
 
-const Service = ({service}) => {
-    const { _id, name, picture, details, price } = service;
+const Service = ({s}) => {
+    const { _id, name, picture, details, price } = s ;
+    console.log(s)
+    
     const [isLoading] = useService()
     return (
         <div className='mt-5'>

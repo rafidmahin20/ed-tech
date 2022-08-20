@@ -10,7 +10,7 @@ const useService = () => {
             setService(data)
             setLoading(false)
         });
-    }, [service])
+    }, [])
     return [service, setService, isLoading];
 };
 
