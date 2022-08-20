@@ -1,0 +1,32 @@
+[
+  {
+    "picture": "https://i.ibb.co/8j81PC1/arnel-hasanovic-4o-WSXde-AS2g-unsplash.png",
+    "price": 699,
+    "name": "Iphone XS",
+    "details": "A12 bionic chip."
+  },
+  {
+    "picture": "https://i.ibb.co/rFbxNBS/alexander-andrews-Wzs4-QEm-CUQ-unsplash.png",
+    "price": 499,
+    "name": "Iphone 11",
+    "details": "A13 Bionic Chip"
+  },
+  {
+    "picture": "https://i.ibb.co/2s0D7kh/thought-catalog-c-AEQVM60-PLI-unsplash.png",
+    "price": 799,
+    "name": "Iphone 11 Pro",
+    "details": "A13 Bionic Chip"
+  },
+  {
+    "picture": "https://i.ibb.co/Np7v1tR/sebastian-bednarek-Nu-Aam-Ggwymw-unsplash.png",
+    "price": 899,
+    "name": "Iphone 12 pro",
+    "details": "A14 Bionic Chip"
+  },
+  {
+    "picture": "https://i.ibb.co/WfXqdH0/omid-armin-skoebz-CO9tc-unsplash.png",
+    "price": 799,
+    "name": "Iphone 12",
+    "details": "A14 Bionic Chip"
+  }
+]
