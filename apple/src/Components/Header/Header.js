@@ -1,35 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import hamburgerMenu from '../../Images/hamburger-menu.png';
 
 const Header = () => {
+    const [navbarOpen, setNavbarOpen] = useState(false);
     return (
-        <div>
-            
-    <nav className="bg-white shadow dark:bg-gray-400">
-        <div className="container px-6 py-3 mx-auto md:flex">
-            <div className="flex items-center justify-between">
-                <div>
-                    <p className="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">Apple</p>
+        <div className=''>
+            <nav className="relative flex flex-wrap items-center justify-between px-2 pt-3 nav-font">
+                <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+                    <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+                        <h1 className='uppercase text-4xl font-bold italic text-red-500'>Apple</h1>
+                        <button
+                            className="inline-flex items-center justify-center p-2  text-white-600 lg:hidden"
+                            type="button"
+                            onClick={() => setNavbarOpen(!navbarOpen)}
+                        >
+                            <img
+                                className="block w-10 h-10 ml-10"
+                                src={hamburgerMenu}
+                                alt=""
+                            />
+                        </button>
+                    </div>
+                    <div
+                        className={
+                            "lg:flex flex-grow items-center" +
+                            (navbarOpen ? " flex" : " hidden")
+                        }
+                        id="example-navbar-danger"
+                    >
+                        <div className="flex flex-col md:flex-row lg:flex-row lg:ml-auto lg:px-10 lg:text-md xl:text-ms 2xl:text-md sm:text-md md:text-sm ">
+                            <Link
+                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
+                                hover:border-b-2"
+                                as={Link} to="/">
+                                Home
+                            </Link>
+                            <Link
+                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
+                                hover:border-b-2"
+                                as={Link} to="/service">
+                               Service
+                            </Link>
+                            <Link
+                                className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900  hover: border-amber-900 
+                                hover:border-b-2"
+                                as={Link} to="/About">
+                                About
+                            </Link>
+                               <Link
+                               className="nav-item px-3 py-2 flex items-center   hover:opacity-75 font-semibold text-amber-900 mt-3"
+                               as={Link} to="/login">
+                               <button type="button" className="
+                               border  border-amber-800 hover:bg-amber-700
+                               hover:text-white focus:ring-4 text-amber-900 font-medium rounded-lg text-md px-12 py-2 mr-2 mb-2">Login</button>
+                           </Link>
+                          
+                        </div>
+                    </div>
                 </div>
-                
-               
-                <div className="flex md:hidden">
-                    <button type="button" className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
-                            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div className="w-full md:flex md:items-center md:justify-between">
-                <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0">
-                    <Link to="/"  className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Home</Link>
-                    <Link to="/service" className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Service</Link>
-                    <Link to="/login" className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Login</Link>
-                </div>
-            </div>
-        </div>
-    </nav>
+            </nav>
         </div>
     );
 };
